@@ -76,6 +76,13 @@ nav {
 	padding: 4em;
 }
 
+#Produkt-info .mirror-image {
+	width: 100%;
+    margin-bottom: 5px;
+    padding: 0;
+    margin-top: 10px;
+}
+
 .btn {
     line-height: 40px;
     margin: 7.5px;
@@ -84,4 +91,31 @@ nav {
 
 .btn:hover {
 	background-color: #2BACE0;
+}
+
+h2.Overskrift{
+	text-align: center;
+}
+
+#Produkt-info {
+	display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 70px;
+}
+
+#box-1 {
+	margin-left: 180px;
+	background-color: white;
+}
+
+#box-2 {
+	margin-left: 10px;
+	background-color: white;
+}
+
+#box-3 {
+	margin-left: 10px;
+	background-color: white;
 }
