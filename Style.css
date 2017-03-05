@@ -6,7 +6,7 @@ body {
 	background-color: #74c1ca;
 	background-size: cover;
 	-webkit-background-size: cover;
-  	moz-background-size: cover;
+  	-moz-background-size: cover;
  	-o-background-size: cover;
  	min-height: 100%;
     margin: 0;
@@ -26,7 +26,7 @@ footer.page-footer {
 	background-color: #424242;
 	background-size: cover;
 	-webkit-background-size: cover;
-  	moz-background-size: cover;
+  	-moz-background-size: cover;
  	-o-background-size: cover;
 }
 
