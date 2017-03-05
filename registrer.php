@@ -54,7 +54,7 @@
                 <input type='text' name='billing_postcode' id='billing_postcode' maxlength="4" />
                 <label for='By' >By*:</label>
                 <input type='text' name='billing_city' id='billing_city' maxlength="50" />
-                <input type='submit' name='Submit' value='Opret' />
+                <input type='submit' name='Submit' value='Opret' class="btn" />
             </div>
         </fieldset>
     </form>
