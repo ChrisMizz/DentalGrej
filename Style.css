@@ -1,3 +1,4 @@
+/* alle sider */
 html {
 	height: 100%;
 }
@@ -13,15 +14,6 @@ body {
     padding: 0;
 }
 
-h1.header.center {
-	color: white;
-	padding-bottom: 20px;
-}
-
-h5.header {
-	color: white;
-}
-
 footer.page-footer {
 	background-color: #424242;
 	background-size: cover;
@@ -29,6 +21,23 @@ footer.page-footer {
   	-moz-background-size: cover;
  	-o-background-size: cover;
 }
+
+/* Alle sider slut */
+/* Index - Side - START */
+/* Index/Produkt - Basic START */
+
+h1.header.center {
+	color: white;
+	padding-bottom: 20px;
+	text-shadow: 2px 4px 3px rgba(0,0,0,.9);
+}
+
+h5.header {
+	color: white;
+}
+
+/* Index/Produkt - Basic SLUT */
+/* Index - Nav START */
 
 nav {
 	background-color: White;
@@ -45,6 +54,40 @@ nav {
 	font-size: 16px;
 }
 
+.brand-logo {
+	z-index: 1;
+}
+
+/* Index - Nav SLUT */
+/*Index - Banner START */
+#index-banner {
+	background-image: url(Dentist.JPG);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+	text-align: center;
+	box-shadow: 0px 0px 7px rgba(0,0,0,.9);
+	padding-top: 60px;
+	background-size: cover;
+}
+
+#index-banner h5 {
+	text-shadow: 2px 4px 3px rgba(0,0,0,.9);
+}
+
+.btn {
+    line-height: 40px;
+    margin: 7.5px;
+    background-color: #269ac9;
+}
+
+.btn:hover {
+	background-color: #2BACE0;
+}
+/*Index - Banner SLUT */
+/* Index - Containers med tekst START */
 #index-info {
 	background-color: white;
 	padding: 0px 140px;
@@ -53,6 +96,8 @@ nav {
 	max-width: 100%;
 }
 
+/* Index - Containers kun med tekst SLUT */
+/* Index - Containers med billede/tekst START */
 #index-pic {
 	display: inline-block;
 	vertical-align: middle;
@@ -68,7 +113,6 @@ nav {
 
 .mirror-text {
 	width: 30%;
-	padding: 1em;
 }
 
 .mirror-image {
@@ -76,28 +120,21 @@ nav {
 	padding: 4em;
 }
 
-#Produkt-info .mirror-image {
-	width: 100%;
-    margin-bottom: 5px;
-    padding: 0;
-    margin-top: 10px;
+#section-mirror {
+	padding: 0%;
 }
-
-.btn {
-    line-height: 40px;
-    margin: 7.5px;
-    background-color: #269ac9;
+/* Index - Containers med billede/tekst SLUT */
+/*Index - Side - SLUT */
+/*Produkt - Side - START */
+/*Produkt - nav - START */
+.Produkt-nav {
+	margin-bottom: 70px;
 }
+/*Produkt - nav - SLUT */
 
-.btn:hover {
-	background-color: #2BACE0;
-}
+/*Produkt - Pakker - START */
 
-h2.Overskrift{
-	text-align: center;
-}
-
-#Produkt-info {
+#Pakke-box-1 {
 	display: inline-block;
     vertical-align: middle;
     max-width: 100%;
@@ -105,17 +142,81 @@ h2.Overskrift{
     margin-top: 70px;
 }
 
-#box-1 {
+#Box-1 {
 	margin-left: 180px;
 	background-color: white;
 }
 
-#box-2 {
+#Box-2 {
 	margin-left: 10px;
 	background-color: white;
 }
 
-#box-3 {
+#Box-3 {
 	margin-left: 10px;
 	background-color: white;
+}
+
+#Box-4 {
+	margin-left: 180px;
+	margin-top: 10px;
+	background-color: white;
+}
+
+#Box-5 {
+	margin-left: 10px;
+	background-color: white;
+	margin-top: 10px;
+}
+
+#Box-6 {
+	margin-left: 10px;
+	background-color: white;
+	margin-top: 10px;
+}
+
+.Pakke-image {
+	width: 100%;
+    margin-bottom: 5px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+/*#Box-1:not(.browser-default) {
+	margin: 0;
+	margin-top: 10px;
+}
+
+#Box-2:not(.browser-default) {
+	margin: 0;
+	margin-top: 10px;
+}
+
+#Box-3:not(.browser-default) {
+	margin: 0;
+	margin-top: 10px;
+}
+
+#Box-4:not(.browser-default) {
+	margin: 0;
+	margin-top: 10px;
+}
+
+#Box-5:not(.browser-default) {
+	margin: 0;
+	margin-top: 10px;
+}
+
+#Box-6:not(.browser-default) {
+	margin: 0;
+	margin-top: 10px;
+}*/
+
+#submit-btn {
+	margin-left: 180px;
+}
+
+/*Produkt - Pakker - SLUT */
+#test {
+	margin-left: 8em;
 }
