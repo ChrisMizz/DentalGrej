@@ -44,8 +44,8 @@
                 <input type='hidden' name='submitted' id='submitted' value='1'/>
                 <label for='name' >Fulde navn*: </label>
                 <input type='text' name='name' id='name' maxlength="50" />
-                <label for='email' >Email addresse*:</label>
-                <input type='text' name='email' id='email' maxlength="50" />
+                <label for='email' data-error="wrong" data-success="right">Email addresse*:</label>
+                <input type='email' name='email' id='email' maxlength="50" class="validate"/>
                 <label for='password' >Adgangskode*:</label>
                 <input type='password' name='password' id='password' maxlength="50" />
                 <label for='adress' >Adresse*:</label>
