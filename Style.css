@@ -22,6 +22,18 @@ footer.page-footer {
  	-o-background-size: cover;
 }
 
+footer ul li {
+	padding: 8px;
+}
+
+footer ul li a {
+	color: #B6B4B3;
+}
+
+footer ul li a:hover {
+	color: #fff;
+}
+
 /* Alle sider slut */
 /* Index - Side - START */
 /* Index/Produkt - Basic START */
@@ -69,8 +81,6 @@ nav {
 	overflow: hidden;
 	text-align: center;
 	box-shadow: 0px 0px 7px rgba(0,0,0,.9);
-	padding-top: 60px;
-	background-size: cover;
 }
 
 #index-banner h5 {
@@ -182,41 +192,12 @@ nav {
     margin-top: 10px;
 }
 
-/*#Box-1:not(.browser-default) {
-	margin: 0;
-	margin-top: 10px;
-}
-
-#Box-2:not(.browser-default) {
-	margin: 0;
-	margin-top: 10px;
-}
-
-#Box-3:not(.browser-default) {
-	margin: 0;
-	margin-top: 10px;
-}
-
-#Box-4:not(.browser-default) {
-	margin: 0;
-	margin-top: 10px;
-}
-
-#Box-5:not(.browser-default) {
-	margin: 0;
-	margin-top: 10px;
-}
-
-#Box-6:not(.browser-default) {
-	margin: 0;
-	margin-top: 10px;
-}*/
-
 #submit-btn {
 	margin-left: 180px;
 }
 
-/*Produkt - Pakker - SLUT */
 #test {
 	margin-left: 8em;
 }
+
+/*Produkt - Pakker - SLUT */
