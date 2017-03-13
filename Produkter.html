@@ -12,57 +12,107 @@
 	<title>DentalGrej - Produkter</title>
 	<link rel="icon" type="image/png" href="Logo.ico">
 	<!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="main.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="main.js"></script>
 </head>
 <body>
-	<nav>
+	<nav class="Produkt-nav">
 		<div class="nav-wrapper">
 			<img class="brand-logo center" src="Logo.png">
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		    <ul id="nav-mobile" class="right hide-on-med-and-down">
 		    	<li><a href="#">Log ind</a></li>
-		        <li><a href="Registrer.php">Registrer</a></li>
+		      <li><a href="Registrer.php">Registrer</a></li>
 		    </ul>
 		    <ul id="nav-mobile" class="left hide-on-med-and-down">
-		        <li><a href="Index.html">Startside</a></li>
-		        <li class="active"><a href="Produkter.html">Produkter</a></li>
-		        <li><a href="#">Kontakt Os</a></li>
+					<li><a href="Index.html">Startside</a></li>
+					<li class="active"><a href="Produkter.html">Produkter</a></li>
 		    </ul>
 		    <ul class="side-nav" id="mobile-demo">
 		    	<li><a href="Index.html">Startside</a></li>
-		        <li class="active"><a href="Produkter.html">Produkter</a></li>
-		        <li><a href="#">Log ind</a></li>
-		        <li><a href="Registrer.php">Registrer</a></li>
-		        <li><a href="#">Kontakt Os</a></li>
+		      <li class="active"><a href="Produkter.html">Produkter</a></li>
+					<li><a href="#">Log ind</a></li>
+					<li><a href="Registrer.php">Registrer</a></li>
 		    </ul>
 		</div>
 	</nav>
-	<div id="Produkt-info" class="container">
 		<div class="section">
 		<!--   Icon Section   -->
 		<div class="row">
-		  <div id="box-1" class="col s12 m3">
+		  <div id="Box-1" class="col s12 m3">
 		    <div class="icon-block">
-		      <img class="mirror-image" src="TB.jpg" alt="bikedark">
+		      <img class="Pakke-image" src="TBaTP.png" alt="bikedark">
+					<h5 class="center">Denne pakke indholder:</h5>
+					<p><i class="material-icons">done</i>Tandbørste</p>
+					<p><i class="material-icons">done</i>Tandpasta</p>
+					<p><i class="material-icons">not_interested</i>Tandtråd</p>
+					<p><i class="material-icons">not_interested</i>Mundskyl</p>
+					<input name="group1" type="radio" id="test1"/>
+					<label id="test" for="test1">Basic</label>
 		    </div>
 		  </div>
-		  <div id="box-2" class="col s12 m3">
+		  <div id="Box-2" class="col s12 m3">
 		    <div class="icon-block">
-		      <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-		      <h5 class="center">Vi er de bedste til prisen</h5>
-		      <p class="light">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		      <img class="Pakke-image" src="TBaTP.png" alt="bikedark">
+					<h5 class="center">Denne pakke indholder:</h5>
+					<p><i class="material-icons">done</i>Tandbørste</p>
+					<p><i class="material-icons">done</i>Tandpasta</p>
+					<p><i class="material-icons">done</i>Tandtråd</p>
+					<p><i class="material-icons">not_interested</i>Mundskyl</p>
+					<input name="group1" type="radio" id="test2"/>
+      		<label id="test" for="test2">Standard</label>
 		    </div>
 		  </div>
-		  <div id="box-3" class="col s12 m3">
+		  <div id="Box-3" class="col s12 m3">
 		    <div class="icon-block">
-		      <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-		      <h5 class="center">Det er let at bruge</h5>
-		      <p class="light">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+		      <img class="Pakke-image" src="Grej.jpg" alt="bikedark">
+					<h5 class="center">Denne pakke indholder:</h5>
+					<p><i class="material-icons">done</i>Tandbørste</p>
+					<p><i class="material-icons">done</i>Tandpasta</p>
+					<p><i class="material-icons">done</i>Tandtråd</p>
+					<p><i class="material-icons">done</i>Mundskyl</p>
+					<input name="group1" type="radio" id="test3"/>
+      		<label id="test" for="test3">Premium</label>
 		    </div>
 		  </div>
+			<br>
 		</div>
+		<button id="submit-btn"class="btn waves-effect waves-light" type="submit" name="action">Bestil
+			<i class="material-icons right">send</i>
+		</button>
 	</div>
+	<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div id="links" class="col l4 offset-12 s12">
+        <ul>
+          <li><a class="" href="Index.html">Startside</a></li>
+          <li><a class="" href="Produkter.html">Produkter</a></li>
+          <li><a class="" href="#!">Kontakts os</a></li>
+        </ul>
+      </div>
+			<div id="links" class="col l4 offset-12 s12">
+        <ul>
+          <li><a class="" href="Index.html">Startside</a></li>
+          <li><a class="" href="Produkter.html">Produkter</a></li>
+          <li><a class="" href="#!">Kontakts os</a></li>
+        </ul>
+      </div>
+			<div id="links" class="col l4 offset-12 s12">
+        <ul>
+          <li><a class="" href="Index.html">Startside</a></li>
+          <li><a class="" href="Produkter.html">Produkter</a></li>
+          <li><a class="" href="#!">Kontakts os</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    <p>Made by Rasmus & Christoffer 2017</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

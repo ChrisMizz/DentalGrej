@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="Style.css">
   <title>DentalGrej</title>
   <link rel="icon" type="image/png" href="Logo.ico">
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="main.js"></script>
 </head>
 <body>
   <nav>
@@ -19,19 +23,17 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="#">Log ind</a></li>
-            <li><a href="Registrer.php">Registrer</a></li>
+          <li><a href="Registrer.php">Registrer</a></li>
         </ul>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li class="active"><a href="Index.html">Startside</a></li>
-            <li><a href="Produkter.html">Produkter</a></li>
-            <li><a href="#">Kontakt Os</a></li>
+          <li class="active"><a href="Index.html">Startside</a></li>
+          <li><a href="Produkter.html">Produkter</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li class="active"><a href="Index.html">Startside</a></li>
-            <li><a href="Produkter.html">Produkter</a></li>
-            <li><a href="#">Log ind</a></li>
-            <li><a href="Registrer.php">Registrer</a></li>
-            <li><a href="#">Kontakt Os</a></li>
+          <li class="active"><a href="Index.html">Startside</a></li>
+          <li><a href="Produkter.html">Produkter</a></li>
+          <li><a href="#">Log ind</a></li>
+          <li><a href="Registrer.php">Registrer</a></li>
         </ul>
     </div>
   </nav>
@@ -81,7 +83,7 @@
   </div>
 </div>
 <div id="index-pic" class="container valign-wrapper">
-  <div class="section no-pad-bot">
+  <div id="section-mirror" class="section no-pad-bot">
   <div class="container">
     <div class="mirror">
       <img class="mirror-image" src="TB.jpg" alt="bikedark">
@@ -102,7 +104,7 @@
   </div>
 </div>
 <div id="index-pic" class="container valign-wrapper">
-  <div class="section no-pad-bot">
+  <div id="section-mirror" class="section no-pad-bot">
   <div class="container">
     <div class="mirror">
       <h5 class="mirror-text header light">Dette er en container hvor der både bliver brugt tekst og billede.</h5>
@@ -114,14 +116,25 @@
 <footer class="page-footer">
   <div class="container">
     <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Footer Content</h5>
-        <p class="grey-text text-lighten-4">Du kan bruge rows og colums her, til at organisere din footer.</p>
-      </div>
-      <div class="col l4 offset-12 s12">
-        <h5 class="white-text">Links</h5>
+      <div id="links" class="col l4 offset-12 s12">
         <ul>
-          <li><a class="grey-text text-lighten-3" href="#!">Kontakts os</a></li>
+          <li><a class="" href="Index.html">Startside</a></li>
+          <li><a class="" href="Produkter.html">Produkter</a></li>
+          <li><a class="" href="#!">Kontakts os</a></li>
+        </ul>
+      </div>
+			<div id="links" class="col l4 offset-12 s12">
+        <ul>
+          <li><a class="" href="Index.html">Startside</a></li>
+          <li><a class="" href="Produkter.html">Produkter</a></li>
+          <li><a class="" href="#!">Kontakts os</a></li>
+        </ul>
+      </div>
+			<div id="links" class="col l4 offset-12 s12">
+        <ul>
+          <li><a class="" href="Index.html">Startside</a></li>
+          <li><a class="" href="Produkter.html">Produkter</a></li>
+          <li><a class="" href="#!">Kontakts os</a></li>
         </ul>
       </div>
     </div>
@@ -132,9 +145,5 @@
     </div>
   </div>
 </footer>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="main.js"></script>
   </body>
 </html>
