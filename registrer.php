@@ -2,15 +2,19 @@
 <html>
 <head>
     <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!--My Css -->
-  <link rel="stylesheet" href="Style.css">
-  <title>DentalGrej</title>
-  <link rel="icon" type="image/png" href="Logo.ico">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--My Css -->
+    <link rel="stylesheet" href="Style.css">
+    <title>DentalGrej - Registrer</title>
+    <link rel="icon" type="image/png" href="Logo.ico">
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="main.js"></script>
 </head>
 <body>
     <nav>
@@ -24,14 +28,12 @@
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="Index.html">Startside</a></li>
             <li><a href="Produkter.html">Produkter</a></li>
-            <li><a href="#">Kontakt Os</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <li><a href="Index.html">Startside</a></li>
             <li><a href="Produkter.html">Produkter</a></li>
             <li><a href="#">Log ind</a></li>
             <li class="active"><a href="Registrer.php">Registrer</a></li>
-            <li><a href="#">Kontakt Os</a></li>
         </ul>
     </div>
   </nav>
@@ -70,9 +72,37 @@
 
 
 ?>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="main.js"></script>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div id="links" class="col l4 offset-12 s12">
+        <ul>
+          <li><a class="" href="Index.html">Startside</a></li>
+          <li><a class="" href="Produkter.html">Produkter</a></li>
+          <li><a class="" href="#!">Kontakts os</a></li>
+        </ul>
+      </div>
+			<div id="links" class="col l4 offset-12 s12">
+        <ul>
+          <li><a class="" href="Index.html">Startside</a></li>
+          <li><a class="" href="Produkter.html">Produkter</a></li>
+          <li><a class="" href="#!">Kontakts os</a></li>
+        </ul>
+      </div>
+			<div id="links" class="col l4 offset-12 s12">
+        <ul>
+          <li><a class="" href="Index.html">Startside</a></li>
+          <li><a class="" href="Produkter.html">Produkter</a></li>
+          <li><a class="" href="#!">Kontakts os</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    <p>Made by Rasmus & Christoffer 2017</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
