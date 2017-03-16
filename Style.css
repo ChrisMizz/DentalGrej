@@ -1,4 +1,4 @@
-/* alle sider */
+/* Alle Sider - START */
 html {
 	height: 100%;
 }
@@ -23,6 +23,10 @@ footer.page-footer {
 	padding: 0px;
 }
 
+footer ul li {
+	margin: 10px;
+}
+
 footer ul li a {
 	color: #B6B4B3;
 }
@@ -33,15 +37,26 @@ footer ul li a:hover {
 
 footer.page-footer .footer-copyright {
 	padding: 0px;
+	background-color: #212121
 }
 
 footer .row {
 	margin-bottom: 0px;
 }
 
-/* Alle sider slut */
+footer #links {
+	margin-top: 40px;
+    font-size: 23px;
+	padding: 0px;
+}
+
+#footer-logo {
+	padding: 0px;
+}
+
+/* Alle Sider - SLUT */
 /* Index - Side - START */
-/* Index/Produkt - Basic START */
+/* Index/Produkt - Basic - START */
 
 h1.header.center {
 	color: white;
@@ -53,8 +68,8 @@ h5.header {
 	color: white;
 }
 
-/* Index/Produkt - Basic SLUT */
-/* Index - Nav START */
+/* Index/Produkt - Basic - SLUT */
+/* Index - Nav - START */
 
 nav {
 	background-color: White;
@@ -75,8 +90,8 @@ nav {
 	z-index: 1;
 }
 
-/* Index - Nav SLUT */
-/*Index - Banner START */
+/* Index - Nav - SLUT */
+/*Index - Banner - START */
 #index-banner {
 	background-image: url(Dentist.JPG);
 	-webkit-background-size: cover;
@@ -85,7 +100,7 @@ nav {
 	background-size: cover;
 	overflow: hidden;
 	text-align: center;
-	box-shadow: 0px 0px 7px rgba(0,0,0,.9);
+	box-shadow: 0px 0px 7px rgba(0,0,0,.6);
 }
 
 #index-banner h5 {
@@ -120,8 +135,8 @@ nav {
 #myBtn:hover {
   background-color: #2BACE0;
 }
-/*Index - Banner SLUT */
-/* Index - Containers med tekst START */
+/*Index - Banner - SLUT */
+/* Index - Containers med tekst - START */
 #index-info {
 	background-color: white;
 	padding: 0px 140px;
@@ -130,8 +145,8 @@ nav {
 	max-width: 100%;
 }
 
-/* Index - Containers kun med tekst SLUT */
-/* Index - Containers med billede/tekst START */
+/* Index - Containers kun med tekst - SLUT */
+/* Index - Containers med billede/tekst * START */
 #index-pic {
 	display: inline-block;
 	vertical-align: middle;
@@ -157,7 +172,7 @@ nav {
 #section-mirror {
 	padding: 0%;
 }
-/* Index - Containers med billede/tekst SLUT */
+/* Index - Containers med billede/tekst - SLUT */
 /*Index - Side - SLUT */
 /*Produkt - Side - START */
 /*Produkt - nav - START */
@@ -226,7 +241,7 @@ nav {
 
 /*Produkt - Pakker - SLUT */
 /*Produkt - Side - SLUT */
-/*Registrer - Side - Start */
+/*Registrer - Side - START */
 #register {
 	padding-top: 40px;
 	padding-bottom: 20px;
@@ -236,3 +251,5 @@ nav {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
+/*Registrer - Side - SLUT*/
