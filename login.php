@@ -22,8 +22,8 @@
       <img class="brand-logo center" src="Logo.png">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="login.php">Log ind</a></li>
-            <li class="active"><a href="Registrer.php">Registrer</a></li>
+          <li class="active"><a href="login.php">Log ind</a></li>
+            <li><a href="Registrer.php">Registrer</a></li>
         </ul>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="Index.html">Startside</a></li>
@@ -32,31 +32,23 @@
         <ul class="side-nav" id="mobile-demo">
             <li><a href="Index.html">Startside</a></li>
             <li><a href="Produkter.html">Produkter</a></li>
-            <li><a href="login.php">Log ind</a></li>
-            <li class="active"><a href="Registrer.php">Registrer</a></li>
+            <li class="active"><a href="login.php">Log ind</a></li>
+            <li><a href="Registrer.php">Registrer</a></li>
         </ul>
     </div>
   </nav>
-    <div id="reg-box" class="container">
+    <div id="login-box" class="container">
     <div id="index-info" class "container">
-    <form id='register' action='register.php' method='post' accept-charset='UTF-8'>
+    <form id='login' action='login.php' method='post' accept-charset='UTF-8'>
        <fieldset >
-            <legend>Opret profil</legend>
-            <div id="regTabel">
+            <legend>Log ind</legend>
+            <div id="loginTabel">
                 <input type='hidden' name='submitted' id='submitted' value='1'/>
-                <label for='name' >Fulde navn*: </label>
-                <input type='text' name='name' id='name' maxlength="50" />
                 <label for='email' data-error="wrong" data-success="right">Email addresse*:</label>
                 <input type='email' name='email' id='email' maxlength="50" class="validate"/>
                 <label for='password' >Adgangskode*:</label>
                 <input type='password' name='password' id='password' maxlength="50" />
-                <label for='adress' >Adresse*:</label>
-                <input type='text' name='adress' id='adress' maxlength="50" />
-                <label for='postnummer' >Postnummer*:</label>
-                <input type='text' name='billing_postcode' id='billing_postcode' maxlength="4" />
-                <label for='By' >By*:</label>
-                <input type='text' name='billing_city' id='billing_city' maxlength="50" />
-                <input type='submit' name='Submit' value='Opret' class="btn" />
+                <input type='submit' name='Submit' value='Log ind' class="btn" />
             </div>
         </fieldset>
     </form>
