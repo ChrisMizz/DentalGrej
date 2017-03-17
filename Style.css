@@ -253,3 +253,15 @@ nav {
 }
 
 /*Registrer - Side - SLUT*/
+
+/*Login - Side - START*/
+#login {
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+#login-box {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+/*Login - Side - SLUT */

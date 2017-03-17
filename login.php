@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!--My Css -->
     <link rel="stylesheet" href="Style.css">
-    <title>DentalGrej - Registrer</title>
+    <title>DentalGrej - Login</title>
     <link rel="icon" type="image/png" href="Logo.ico">
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -40,7 +40,7 @@
     <div id="login-box" class="container">
     <div id="index-info" class "container">
     <form id='login' action='login.php' method='post' accept-charset='UTF-8'>
-       <fieldset >
+       <fieldset>
             <legend>Log ind</legend>
             <div id="loginTabel">
                 <input type='hidden' name='submitted' id='submitted' value='1'/>
@@ -64,32 +64,5 @@
 
 
 ?>
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l8 s12">
-          <h5 class="white-text">Kontakt Informationer</h5>
-          <p class="grey-text text-lighten-4">Email: support@dentalgrej.dk</p>
-          <p class="grey-text text-lighten-4">Telefon: +45 44 99 88 77</p>
-          <p class="grey-text text-lighten-4">Lageradresse: Akademivej 451, 2800 Kgs. Lyngby</p>
-        </div>
-			<div id="footer-logo" class="col l1.5">
-        <ul>
-          <img class="brand-logo center" src="Logo.png">
-        </ul>
-      </div>
-      <div id="links" class="col 14">
-        <ul>
-          <p class="grey-text text-lighten-4">DentalGrej</p>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-    <p>Eksamens projekt udført af Rasmus Gregersen og Christoffer Adrian Detlef 2017</p>
-    </div>
-  </div>
-</footer>
 </body>
 </html>
