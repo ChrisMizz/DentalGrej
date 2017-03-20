@@ -2,7 +2,7 @@
 <html>
 <head>
     <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <!--Let browser know website is optimized for mobile-->
@@ -24,7 +24,6 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="login.php">Log ind</a></li>
-            <li class="active"><a href="Registrer.php">Registrer</a></li>
         </ul>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="Index.html">Startside</a></li>
@@ -34,7 +33,6 @@
             <li><a href="Index.html">Startside</a></li>
             <li><a href="Produkter.html">Produkter</a></li>
             <li><a href="login.php">Log ind</a></li>
-            <li class="active"><a href="Registrer.php">Registrer</a></li>
         </ul>
     </div>
   </nav>
