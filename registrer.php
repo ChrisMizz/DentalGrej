@@ -38,7 +38,7 @@
   </nav>
   <div id="reg-box" class="container">
     <div id="index-info" class "container">
-    <form id='register' action='register.php' method='post' accept-charset='UTF-8'>
+    <form id='register' action='regHandler.php' method='post' accept-charset='UTF-8'>
        <fieldset>
             <legend>Opret profil</legend>
             <div id="regTabel">
