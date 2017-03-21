@@ -34,3 +34,15 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+$(function(){
+ $(".myForm").submit(function(e) {
+ e.preventDefault();
+ var url = $(this).find('input[type="radio"]:checked').val();
+ if (url) {
+  var myWindow = window.open("registrer.php", "_self");
+ }
+ else {
+ }
+ });
+});
