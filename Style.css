@@ -256,6 +256,20 @@ nav {
 	margin-bottom: 20px;
 }
 
+#register p {
+	display: inline;
+	font-size: 20px;
+}
+#register p.ptag {
+    text-align: left;
+    font-size: 16px;
+    display: inline;
+}
+
+fieldset {
+	margin-top: 20px;
+}
+
 /*Registrer - Side - SLUT*/
 
 /*Login - Side - START*/

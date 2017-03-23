@@ -29,7 +29,7 @@ function scrollFunction() {
     }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// When the user clicks on the button, scroll to the top of the document 
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -46,3 +46,17 @@ $(function(){
  }
  });
 });
+
+//localStorage er gemt med dette scirpt
+
+function valgtePakke() {
+  var check = document.getElementsByName('pakke');
+  for(var i = 0; i < check.length; i++)
+  {
+    if (check[i].checked)
+    {
+      console.log(check[i].value);
+      localStorage.setItem("valgtePakke", check[i].value);
+    }
+  }
+}
