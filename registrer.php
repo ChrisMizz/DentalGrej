@@ -39,7 +39,7 @@
   <div id="reg-box" class="container">
     <div id="index-info" class "container">
     <form id='register' action='regHandler.php' method='post'>
-      <p style="display:inline; font-size: 16px;margin-top:20px;">Din valgte pakke: </p><p style="display:inline; font-size: 16px;margin-top:20px;" id="svar"></p>
+      <p>Din valgte pakke: </p><p id="svar"></p>
        <script>document.getElementById('svar').innerHTML = localStorage.valgtePakke;</script>
        <fieldset>
             <legend>Opret profil</legend>
