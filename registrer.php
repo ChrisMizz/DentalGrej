@@ -14,7 +14,7 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="main.js"></script>
+    <script src="Main.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
@@ -38,7 +38,9 @@
   </nav>
   <div id="reg-box" class="container">
     <div id="index-info" class "container">
-    <form id='register' action='regHandler.php' method='post' accept-charset='UTF-8'>
+    <form id='register' action='regHandler.php' method='post'>
+      <p style="display:inline; font-size: 16px;margin-top:20px;">Din valgte pakke: </p><p style="display:inline; font-size: 16px;margin-top:20px;" id="svar"></p>
+       <script>document.getElementById('svar').innerHTML = localStorage.valgtePakke;</script>
        <fieldset>
             <legend>Opret profil</legend>
             <div id="regTabel">
@@ -61,15 +63,5 @@
     </form>
     </div>
     </div>
-<?php
-
-
-
-
-
-
-
-
-?>
 </body>
 </html>

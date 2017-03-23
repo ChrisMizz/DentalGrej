@@ -37,7 +37,7 @@
 		    </ul>
 		</div>
 	</nav>
-<form class="myForm" action="registrer.php">
+<form class="myForm" action="registrer.php" method="get">
 		<div class="section">
 		<!--   Icon Section   -->
 		<div class="row">
@@ -49,7 +49,7 @@
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">not_interested</i>Tandtråd</p>
 					<p><i class="material-icons">not_interested</i>Mundskyl</p>
-					<input name="group1" type="radio" id="test1"/>
+					<input class="stored" name="pakke" value="Basic" type="radio" id="test1"/>
 					<label id="test" for="test1">Basic</label>
 		    </div>
 		  </div>
@@ -61,7 +61,7 @@
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">done</i>Tandtråd</p>
 					<p><i class="material-icons">not_interested</i>Mundskyl</p>
-					<input name="group1" type="radio" id="test2"/>
+					<input class="stored" name="pakke" value="Standard" type="radio" id="test2"/>
       		<label id="test" for="test2">Standard</label>
 		    </div>
 		  </div>
@@ -73,13 +73,13 @@
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">done</i>Tandtråd</p>
 					<p><i class="material-icons">done</i>Mundskyl</p>
-					<input name="group1" type="radio" id="test3"/>
+					<input class="stored" name="pakke" value="Premium" type="radio" id="test3"/>
       		<label id="test" for="test3">Premium</label>
 		    </div>
 		  </div>
 			<br>
 		</div>
-		<button id="submit-btn"class="btn waves-effect waves-light" type="submit" name="action">Bestil
+		<button id="submit-btn"class="btn waves-effect waves-light" type="submit" name="action" onclick="valgtePakke()">Bestil
 			<i class="material-icons right">send</i>
 		</button>
 	</div>
