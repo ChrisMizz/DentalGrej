@@ -13,6 +13,7 @@
 	<link rel="icon" type="image/png" href="Logo.ico">
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script src="main.js"></script>
 	<!-- Latest compiled and minified CSS -->
@@ -49,8 +50,7 @@
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">not_interested</i>Tandtråd</p>
 					<p><i class="material-icons">not_interested</i>Mundskyl</p>
-					<input class="stored" name="pakke" value="Basic" type="radio" id="test1"/>
-					<label id="test" for="test1">Basic</label>
+					<ul><li><a class="add-to-cart" href="#" data-name="Basic" data-price="3">Basic (pris)</a></li></ul>
 		    </div>
 		  </div>
 		  <div id="Box-2" class="col s12 m3">
@@ -61,8 +61,7 @@
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">done</i>Tandtråd</p>
 					<p><i class="material-icons">not_interested</i>Mundskyl</p>
-					<input class="stored" name="pakke" value="Standard" type="radio" id="test2"/>
-      		<label id="test" for="test2">Standard</label>
+					<ul><li><a class="add-to-cart" href="#" data-name="Standard" data-price="2">Standard (pris)</a></li></ul>
 		    </div>
 		  </div>
 		  <div id="Box-3" class="col s12 m3">
@@ -73,16 +72,94 @@
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">done</i>Tandtråd</p>
 					<p><i class="material-icons">done</i>Mundskyl</p>
-					<input class="stored" name="pakke" value="Premium" type="radio" id="test3"/>
-      		<label id="test" for="test3">Premium</label>
+					<ul><li><a class="add-to-cart" href="#" data-name="Premium" data-price="2">Premium (pris)</a></li></ul>
 		    </div>
 		  </div>
 			<br>
 		</div>
-		<button id="submit-btn"class="btn waves-effect waves-light" type="submit" name="action" onclick="valgtePakke()">Bestil
+		<div class="container">
+			<ul id="show-cart">
+					<li>???????</li>
+			</ul>
+			<div>Antal valgte pakker <span id="count-cart">X</span></div>
+			<div>Beløb: <span id="total-cart"></span>DKK</div>
+    </div>
+		<button id="submit-btn"class="btn waves-effect waves-light" type="submit">Bestil
 			<i class="material-icons right">send</i>
 		</button>
 	</div>
+<script>
+		$(".add-to-cart").click(function(event){
+				event.preventDefault();
+				var name = $(this).attr("data-name");
+				var price = Number($(this).attr("data-price"));
+
+				shoppingCart.addItemToCart(name, price, 1);
+				displayCart();
+		});
+
+		$("#clear-cart").click(function(event){
+				shoppingCart.clearCart();
+				displayCart();
+		});
+
+		function displayCart() {
+				var cartArray = shoppingCart.listCart();
+				console.log(cartArray);
+				var output = "";
+
+for (var i in cartArray) {
+						output += "<li>"
+								+cartArray[i].name
+								+" <input class='item-count' data-name='"
+								+cartArray[i].name
+								+"' value='"+cartArray[i].count+"' >"
+								+" x "+cartArray[i].price
+								+" = "+cartArray[i].total
+								+" <button class='plus-item' data-name='"
+                        +cartArray[i].name+"'>+</button>"
+                        +" <button class='subtract-item' data-name='"
+                        +cartArray[i].name+"'>-</button>"
+                        +" <button class='delete-item' data-name='"
+                        +cartArray[i].name+"'>X</button>"
+                        +"</li>";
+								+"</li>";
+				}
+
+				$("#show-cart").html(output);
+				$("#count-cart").html( shoppingCart.countCart() );
+				$("#total-cart").html( shoppingCart.totalCart() );
+		}
+
+		$("#show-cart").on("click", ".delete-item", function(event){
+				var name = $(this).attr("data-name");
+				shoppingCart.removeItemFromCartAll(name);
+				displayCart();
+		});
+
+		$("#show-cart").on("click", ".subtract-item", function(event){
+				var name = $(this).attr("data-name");
+				shoppingCart.removeItemFromCart(name);
+				displayCart();
+		});
+
+		$("#show-cart").on("click", ".plus-item", function(event){
+				var name = $(this).attr("data-name");
+				shoppingCart.addItemToCart(name, 0, 1);
+				displayCart();
+		});
+
+		$("#show-cart").on("change", ".item-count", function(event){
+				var name = $(this).attr("data-name");
+				var count = Number($(this).val());
+				shoppingCart.setCountForItem(name, count);
+				displayCart();
+		});
+
+
+		displayCart();
+
+</script>
 </form>
 <footer class="page-footer">
   <div class="container">
