@@ -157,3 +157,15 @@ var shoppingCart = (function () {
     // ----------------------------
     return obj;
 })();
+
+/*$(function(){
+  $(".myForm").submit(function(e) {
+  e.preventDefault();
+  var url = $(this).find('input[value > 0]:').val();
+  if (url) {
+   var myWindow = window.open("registrer.php", "_self");
+ }
+ else {
+ }
+ });
+});*/

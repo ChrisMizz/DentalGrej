@@ -38,7 +38,7 @@
 		    </ul>
 		</div>
 	</nav>
-<form class="myForm" action="registrer.php" method="get">
+<form id="formSubmit" class="myForm" action="registrer.php" method="get">
 		<div class="section">
 		<!--   Icon Section   -->
 		<div class="row">
@@ -50,7 +50,7 @@
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">not_interested</i>Tandtråd</p>
 					<p><i class="material-icons">not_interested</i>Mundskyl</p>
-					<ul><li><a class="add-to-cart" href="#" data-name="Basic" data-price="3">Basic (pris)</a></li></ul>
+					<button class="btn add-to-cart" href="#" data-name="Basic" data-price="100.00">Basic (100.00 DKK)</button>
 		    </div>
 		  </div>
 		  <div id="Box-2" class="col s12 m3">
@@ -61,7 +61,7 @@
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">done</i>Tandtråd</p>
 					<p><i class="material-icons">not_interested</i>Mundskyl</p>
-					<ul><li><a class="add-to-cart" href="#" data-name="Standard" data-price="2">Standard (pris)</a></li></ul>
+					<button class="btn add-to-cart" href="#" data-name="Standard" data-price="150.00">Standard (150.00 DKK)</button>
 		    </div>
 		  </div>
 		  <div id="Box-3" class="col s12 m3">
@@ -72,13 +72,13 @@
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">done</i>Tandtråd</p>
 					<p><i class="material-icons">done</i>Mundskyl</p>
-					<ul><li><a class="add-to-cart" href="#" data-name="Premium" data-price="2">Premium (pris)</a></li></ul>
+					<button class="btn add-to-cart" href="#" data-name="Premium" data-price="300.00">Premium (300.00 DKK)</button>
 		    </div>
 		  </div>
 			<br>
 		</div>
 		<div class="container">
-			<ul id="show-cart">
+			<ul type="Number" id="show-cart">
 					<li>???????</li>
 			</ul>
 			<div>Antal valgte pakker <span id="count-cart">X</span></div>
@@ -89,76 +89,79 @@
 		</button>
 	</div>
 <script>
-		$(".add-to-cart").click(function(event){
-				event.preventDefault();
-				var name = $(this).attr("data-name");
-				var price = Number($(this).attr("data-price"));
+$(".add-to-cart").click(function(event){
+		event.preventDefault();
+		var name = $(this).attr("data-name");
+		var price = Number($(this).attr("data-price"));
 
-				shoppingCart.addItemToCart(name, price, 1);
-				displayCart();
-		});
-
-		$("#clear-cart").click(function(event){
-				shoppingCart.clearCart();
-				displayCart();
-		});
-
-		function displayCart() {
-				var cartArray = shoppingCart.listCart();
-				console.log(cartArray);
-				var output = "";
-
-for (var i in cartArray) {
-						output += "<li>"
-								+cartArray[i].name
-								+" <input class='item-count' data-name='"
-								+cartArray[i].name
-								+"' value='"+cartArray[i].count+"' >"
-								+" x "+cartArray[i].price
-								+" = "+cartArray[i].total
-								+" <button class='plus-item' data-name='"
-                        +cartArray[i].name+"'>+</button>"
-                        +" <button class='subtract-item' data-name='"
-                        +cartArray[i].name+"'>-</button>"
-                        +" <button class='delete-item' data-name='"
-                        +cartArray[i].name+"'>X</button>"
-                        +"</li>";
-								+"</li>";
-				}
-
-				$("#show-cart").html(output);
-				$("#count-cart").html( shoppingCart.countCart() );
-				$("#total-cart").html( shoppingCart.totalCart() );
-		}
-
-		$("#show-cart").on("click", ".delete-item", function(event){
-				var name = $(this).attr("data-name");
-				shoppingCart.removeItemFromCartAll(name);
-				displayCart();
-		});
-
-		$("#show-cart").on("click", ".subtract-item", function(event){
-				var name = $(this).attr("data-name");
-				shoppingCart.removeItemFromCart(name);
-				displayCart();
-		});
-
-		$("#show-cart").on("click", ".plus-item", function(event){
-				var name = $(this).attr("data-name");
-				shoppingCart.addItemToCart(name, 0, 1);
-				displayCart();
-		});
-
-		$("#show-cart").on("change", ".item-count", function(event){
-				var name = $(this).attr("data-name");
-				var count = Number($(this).val());
-				shoppingCart.setCountForItem(name, count);
-				displayCart();
-		});
-
-
+		shoppingCart.addItemToCart(name, price, 1);
 		displayCart();
+});
 
+$("#clear-cart").click(function(event){
+		shoppingCart.clearCart();
+		displayCart();
+});
+
+function displayCart() {
+		var cartArray = shoppingCart.listCart();
+		console.log(cartArray);
+		var output = "";
+			for (var i in cartArray) {
+				output += "<li>"
+					+cartArray[i].name
+					+" <input class='item-count' data-name='"
+					+cartArray[i].name
+					+"' value='"+cartArray[i].count+"' >"
+					+" <button class='subtract-item' data-name='"
+					+cartArray[i].name+"'>-</button>"
+					+" <button class='plus-item' data-name='"
+					+cartArray[i].name+"'>+</button>"
+					+" <button class='delete-item' data-name='"
+					+cartArray[i].name+"'>X</button>"
+					+"</li>";
+			}
+		$("#show-cart").html(output);
+		$("#count-cart").html( shoppingCart.countCart() );
+		$("#total-cart").html( shoppingCart.totalCart() );
+}
+
+$("#show-cart").on("click", ".delete-item", function(event){
+		var name = $(this).attr("data-name");
+		shoppingCart.removeItemFromCartAll(name);
+		displayCart();
+});
+
+$("#show-cart").on("click", ".subtract-item", function(event){
+		var name = $(this).attr("data-name");
+		shoppingCart.removeItemFromCart(name);
+		displayCart();
+});
+
+$("#show-cart").on("click", ".plus-item", function(event){
+		var name = $(this).attr("data-name");
+		shoppingCart.addItemToCart(name, 0, 1);
+		displayCart();
+});
+
+$("#show-cart").on("change", ".item-count", function(event){
+		var name = $(this).attr("data-name");
+		var count = Number($(this).val());
+		shoppingCart.setCountForItem(name, count);
+		displayCart();
+});
+
+displayCart();
+
+$("#formSubmit").submit(function(){
+	if ($('.item-count').val() >= 1) {
+		return true;
+	}
+	else {
+		alert('Du skal vælge mindst en pakke')
+		return false;
+		}
+})
 </script>
 </form>
 <footer class="page-footer">
@@ -184,7 +187,7 @@ for (var i in cartArray) {
   </div>
   <div class="footer-copyright">
     <div class="container">
-    <p>Eksamens projekt udført af Rasmus Gregersen og Christoffer Adrian Detlef 2017</p>
+			<p>Eksamens projekt udført af Rasmus Gregersen og Christoffer Adrian Detlef 2017</p>
     </div>
   </div>
 </footer>
