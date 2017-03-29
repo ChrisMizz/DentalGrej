@@ -117,17 +117,17 @@
             <div id="regTabel">
                 <input type='hidden' name='submitted' id='submitted' value='1'/>
                 <label for='name' >Fulde navn*: </label>
-                <input type='text' name='name' id='name' maxlength="50" />
+                <input type='text' name='name' id='name' maxlength="50" required/>
                 <label for='email' data-error="wrong" data-success="right">Email addresse*:</label>
-                <input type='email' name='email' id='email' maxlength="50" class="validate"/>
+                <input type='email' name='email' id='email' maxlength="50" class="validate" required/>
                 <label for='password' >Adgangskode*:</label>
-                <input type='password' name='password' id='password' maxlength="50" />
+                <input type='password' name='password' id='password' maxlength="50" required/>
                 <label for='adress' >Adresse*:</label>
-                <input type='text' name='adress' id='adress' maxlength="50" />
+                <input type='text' name='adress' id='adress' maxlength="50" required/>
                 <label for='postnummer' >Postnummer*:</label>
-                <input type='text' name='billing_postcode' id='billing_postcode' maxlength="4" />
+                <input type='text' name='billing_postcode' id='billing_postcode' maxlength="4" required/>
                 <label for='By' >By*:</label>
-                <input type='text' name='billing_city' id='billing_city' maxlength="50" />
+                <input type='text' name='billing_city' id='billing_city' maxlength="50" required/>
                 <input type='submit' name='Submit' value='Opret' class="btn" />
             </div>
         </fieldset>
