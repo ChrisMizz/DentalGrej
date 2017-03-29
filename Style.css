@@ -210,29 +210,15 @@ nav {
 	background-color: white;
 }
 
-#Box-4 {
-	margin-left: 180px;
-	margin-top: 10px;
-	background-color: white;
-}
-
-#Box-5 {
-	margin-left: 10px;
-	background-color: white;
-	margin-top: 10px;
-}
-
-#Box-6 {
-	margin-left: 10px;
-	background-color: white;
-	margin-top: 10px;
-}
-
 .Pakke-image {
 	width: 100%;
     margin-bottom: 5px;
     padding: 0;
     margin-top: 10px;
+}
+
+.btn:focus, .btn-large:focus, .btn-floating:focus {
+	background-color: #269ac9;
 }
 
 #submit-btn {
