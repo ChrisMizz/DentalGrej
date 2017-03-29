@@ -28,11 +28,11 @@
           <li><a href="Registrer.php">Registrer</a></li>
         </ul>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li class="active"><a href="Index.html">Startside</a></li>
+          <li><a href="Index.html">Startside</a></li>
           <li><a href="Produkter.html">Produkter</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li class="active"><a href="Index.html">Startside</a></li>
+          <li><a href="Index.html">Startside</a></li>
           <li><a href="Produkter.html">Produkter</a></li>
           <li><a href="login.php">Log ind</a></li>
           <li><a href="Registrer.php">Registrer</a></li>
