@@ -26,14 +26,33 @@
         <div id="regTabel">
         <input type='hidden' name='submitted' id='submitted' value='1'/>
         <label for='cardnumber' >Kortnummer (16 cifre)*: </label>
-        <input type='text' name='cardnumber' id='cnumber' maxlength="16" disabled/>
+        <input type='text' name='cardnumber' id='cnumber' maxlength="16" value="1231231231231230" disabled/>
         <label for='udløbsdato' >Udløbsdato*:</label>
-        <input type='month' name='udløbsdato' id='uddato' disabled/><br><br>
+        <input type='month' name='udløbsdato' class="datepicker"id='uddato' disabled/><br><br>
         <label for='sikkerhedskode' >Sikkerhedskode*:</label>
         <input type='text' name='sikkerhedskode' id='skode' maxlength="3" disabled/>
         <input type='submit' name='Submit' value='Betal' class="btn" />
         </div>
         </fieldset>
+        <script>
+            $(function() {
+    $('.date-picker').datepicker( {
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        dateFormat: 'MM yy',
+        onClose: function(dateText, inst) { 
+            $(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth, 1));
+        }
+    });
+});
+            var $input = $('.datepicker').pickadate()
+            // Use the picker object directly.
+            var picker = $input.pickadate('picker')
+            // Using a string along with the parsing format (defaults to `format` option).
+            picker.set('select', '2016-04', { format: 'yyyy-mm' })
+        </script>
+        
     </form>
     </div>
     </div>
