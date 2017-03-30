@@ -56,6 +56,11 @@
         </ul>
     </div>
   </nav>
+ 
+<!--
+Her starter vi en FORM
+//-->
+ 
   <div id="reg-box" class="container">
     <div id="index-info" class "container">
     <form id='register' method='post'>

@@ -38,7 +38,7 @@
   </nav>
     <div id="login-box" class="container">
     <div id="index-info" class "container">
-    <form id='login' action='login.php' method='post' accept-charset='UTF-8'>
+    <form id='login' method='post' accept-charset='UTF-8'>
        <fieldset>
             <legend>Log ind</legend>
             <div id="loginTabel">
@@ -55,10 +55,17 @@
     </div>
 <?php
 session_start();
+require_once 'connect_db.php';
+
+mysqli_query($conn, $compare);
+
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 
-
-
+$compare = "SELECT * FROM Bruger WHERE email='$email' AND password='$password'";
+$elev = mysqli_query($conn, $compare);
+$elev_assoc = mysqli_fetch_assoc($elev);
 
 
 
