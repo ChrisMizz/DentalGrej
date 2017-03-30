@@ -42,5 +42,11 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top">&#x21E7 Top</button>
 
 
+<?php
+session_start();
+
+
+?>
+
   </body>
 </html>

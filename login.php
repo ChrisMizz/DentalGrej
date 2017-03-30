@@ -54,7 +54,7 @@
     </div>
     </div>
 <?php
-
+session_start();
 
 
 

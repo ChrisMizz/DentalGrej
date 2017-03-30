@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    require_once 'connect_db.php';
+
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $adress = $_POST["adress"];
+    $billing_postcode = $_POST["billing_postcode"];
+    $billing_city = $_POST["billing_city"];
+    
+    $sql = "INSERT INTO Bruger (`Navn`, `Email`, `Adgangskode`, `Adresse`, `Postnummer`, `By`)
+    VALUES ('" . $name . "','" . $email . "','" . $password . "','" . $adress . "','" . $billing_postcode . "','" . $billing_city . "')";
+    
+    if (mysqli_query($conn, $sql)) {
+        header('Location: regHandler.php');
+        //echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
+    } else {
+        echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
+    }
+?>
 <html>
 <head>
     <!--Import Google Icon Font-->
@@ -38,7 +58,7 @@
   </nav>
   <div id="reg-box" class="container">
     <div id="index-info" class "container">
-    <form id='register' action='regHandler.php' method='post'>
+    <form id='register' method='post'>
 <div>
     <p>Din(e) valgte pakke(r)</p>
     <ul id="show-cart">
