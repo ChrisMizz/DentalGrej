@@ -29,13 +29,12 @@ CREATE TABLE `Abonnementer` (
   `Postnummer` int(11) NOT NULL,
   `By` varchar(45) NOT NULL,
   `Betalt` int(11) NOT NULL DEFAULT '0',
-  `Produkter_idProdukter` int(11) NOT NULL,
-  `Produkter_idProdukter1` int(11) NOT NULL,
   `TotalPris` decimal(6,2) NOT NULL DEFAULT '0.00',
-  PRIMARY KEY (`idOdre`,`Produkter_idProdukter`,`Produkter_idProdukter1`),
+  `Bruger_idBruger` int(11) NOT NULL,
+  PRIMARY KEY (`idOdre`,`Bruger_idBruger`),
   UNIQUE KEY `idOdre_UNIQUE` (`idOdre`),
-  KEY `fk_Odre_Produkter1_idx` (`Produkter_idProdukter1`),
-  CONSTRAINT `fk_Odre_Produkter1` FOREIGN KEY (`Produkter_idProdukter1`) REFERENCES `Produkter` (`idProdukter`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_Abonnementer_Bruger1_idx` (`Bruger_idBruger`),
+  CONSTRAINT `fk_Abonnementer_Bruger1` FOREIGN KEY (`Bruger_idBruger`) REFERENCES `Bruger` (`idBruger`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -63,14 +62,10 @@ CREATE TABLE `Bruger` (
   `Adresse` varchar(45) NOT NULL,
   `Postnummer` int(11) NOT NULL,
   `By` varchar(45) NOT NULL,
-  `Odre_idOdre` int(11) NOT NULL,
-  `Odre_Produkter_idProdukter` int(11) NOT NULL,
-  PRIMARY KEY (`idBruger`,`Odre_idOdre`,`Odre_Produkter_idProdukter`),
+  PRIMARY KEY (`idBruger`),
   UNIQUE KEY `idBruger_UNIQUE` (`idBruger`),
-  UNIQUE KEY `Email_UNIQUE` (`Email`),
-  KEY `fk_Bruger_Odre1_idx` (`Odre_idOdre`,`Odre_Produkter_idProdukter`),
-  CONSTRAINT `fk_Bruger_Odre1` FOREIGN KEY (`Odre_idOdre`, `Odre_Produkter_idProdukter`) REFERENCES `Abonnementer` (`idOdre`, `Produkter_idProdukter`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  UNIQUE KEY `Email_UNIQUE` (`Email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,6 +74,7 @@ CREATE TABLE `Bruger` (
 
 LOCK TABLES `Bruger` WRITE;
 /*!40000 ALTER TABLE `Bruger` DISABLE KEYS */;
+INSERT INTO `Bruger` VALUES (1,'Rasmus Gregersen P?PPP','raller799@live.dk','asdfasdf','Alsikemarken 69',2860,'SÃ¸borg'),(3,'Rasmus Gregersen HEJ','raller799@live.dks','asdfasdf','Alsikemarken 69',2860,'SÃ¸borg');
 /*!40000 ALTER TABLE `Bruger` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,8 +91,11 @@ CREATE TABLE `Produkter` (
   `Billede` varchar(45) DEFAULT NULL,
   `Indhold` varchar(45) NOT NULL,
   `Pris` decimal(6,2) NOT NULL,
-  PRIMARY KEY (`idProdukter`),
-  UNIQUE KEY `idProdukter_UNIQUE` (`idProdukter`)
+  `Abonnementer_idOdre` int(11) NOT NULL,
+  PRIMARY KEY (`idProdukter`,`Abonnementer_idOdre`),
+  UNIQUE KEY `idProdukter_UNIQUE` (`idProdukter`),
+  KEY `fk_Produkter_Abonnementer1_idx` (`Abonnementer_idOdre`),
+  CONSTRAINT `fk_Produkter_Abonnementer1` FOREIGN KEY (`Abonnementer_idOdre`) REFERENCES `Abonnementer` (`idOdre`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -118,4 +117,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-30  8:57:07
+-- Dump completed on 2017-03-30 12:53:50
