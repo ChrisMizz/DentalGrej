@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Abonnementer` (
   CONSTRAINT `fk_Abonnementer_Bruger1`
     FOREIGN KEY (`Bruger_idBruger` , `Bruger_Navn` , `Bruger_Adresse` , `Bruger_Postnummer` , `Bruger_By`)
     REFERENCES `mydb`.`Bruger` (`idBruger` , `Navn` , `Adresse` , `Postnummer` , `By`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -73,8 +73,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Produkter` (
   CONSTRAINT `fk_Produkter_Abonnementer1`
     FOREIGN KEY (`Abonnementer_idOdre`)
     REFERENCES `mydb`.`Abonnementer` (`idOdre`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
