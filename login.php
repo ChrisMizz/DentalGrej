@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION["magnus"])) {
+  header("location: profil.php");
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +45,7 @@
   </nav>
     <div id="login-box" class="container">
     <div id="index-info" class "container">
-    <form id='login' action='login.php' method='post' accept-charset='UTF-8'>
+    <form id='login' method='post' accept-charset='UTF-8'>
        <fieldset>
             <legend>Log ind</legend>
             <div id="loginTabel">
@@ -55,9 +62,31 @@
     </div>
 <?php
 session_start();
+require_once 'connect_db.php';
 
 
 
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+
+
+$dbUserInfo = "SELECT Adgangskode FROM Bruger WHERE Email='$email' AND Adgangskode='$password'";
+
+
+$elev = mysqli_query($conn, $dbUserInfo);
+$rows = mysqli_num_rows($elev);
+
+if ($rows == 1) {
+
+    $_SESSION["loggedIn"] = $email; 
+    header("Location: profil.php");
+    exit;
+}else {
+
+echo "Lortet virker IKKE, møgluder";
+
+}
 
 
 

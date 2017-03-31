@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(isset($_SESSION["loggedIn"])) {
+  echo "Lortet virker";
+}
+
+else {
+  header("location: index.html");
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,12 +53,6 @@
   </nav>
 <button onclick="topFunction()" id="myBtn" title="Go to top">&#x21E7 Top</button>
 
-
-<?php
-session_start();
-
-
-?>
 
   </body>
 </html>
