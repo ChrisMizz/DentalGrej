@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION["magnus"])) {
+  header("location: profil.php");
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,15 +64,30 @@
 session_start();
 require_once 'connect_db.php';
 
-mysqli_query($conn, $compare);
+
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
 
-$compare = "SELECT * FROM Bruger WHERE email='$email' AND password='$password'";
-$elev = mysqli_query($conn, $compare);
-$elev_assoc = mysqli_fetch_assoc($elev);
+
+$dbUserInfo = "SELECT Adgangskode FROM Bruger WHERE Email='$email' AND Adgangskode='$password'";
+
+
+$elev = mysqli_query($conn, $dbUserInfo);
+$rows = mysqli_num_rows($elev);
+
+if ($rows == 1) {
+
+    $_SESSION["loggedIn"] = $email; 
+    header("Location: profil.php");
+    exit;
+}else {
+
+echo "Lortet virker IKKE, møgluder";
+
+}
+
 
 
 
