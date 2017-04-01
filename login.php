@@ -84,7 +84,7 @@ if ($rows == 1) {
     exit;
 }else {
 
-//echo "Der opstod en fejl";
+echo "Der opstod en fejl";
 
 }
 
