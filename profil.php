@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+//Tjekker om brugeren er logget ind
 if(isset($_SESSION["loggedIn"])) {
   //echo "Det virker";
 }
