@@ -31,7 +31,7 @@ else {
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-  <nav>
+  <nav class="Produkt-nav">
     <div class="nav-wrapper">
       <img class="brand-logo center" src="Logo.png">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -50,7 +50,82 @@ else {
     </div>
   </nav>
 <button onclick="topFunction()" id="myBtn" title="Go to top">&#x21E7 Top</button>
+<form id="formSubmit" class="myForm" action="registrer.php">
+    <div id="reg-box" class="container">
+    <div id="index-info" class "container">
+    <form id='register' method='post'>
+<div>
+    <p>Din(e) valgte pakke(r)</p>
+    <ul id="show-cart">
+    <li>???????</li>
+    </ul>
+    <div>Antal valgte pakker <span id="count-cart">X</span></div>
+    <div>Beløb: <span id="total-cart"></span>DKK</div>
+</div>
+<script>
+$(".add-to-cart").click(function(event){
+		event.preventDefault();
+		var name = $(this).attr("data-name");
+		var price = Number($(this).attr("data-price"));
 
+		shoppingCart.addItemToCart(name, price, 1);
+		displayCart();
+});
 
+function displayCart() {
+		var cartArray = shoppingCart.listCart();
+		console.log(cartArray);
+		var output = "";
+			for (var i in cartArray) {
+				output += "<li>"
+					+cartArray[i].name
+                    +" <input disabled class='item-count' data-name='"
+                    +cartArray[i].name
+                    +"' value='"+cartArray[i].count+"' >"
+					+"</li>";
+			}
+		$("#show-cart").html(output);
+		$("#count-cart").html( shoppingCart.countCart() );
+		$("#total-cart").html( shoppingCart.totalCart() );
+}
+
+$("#show-cart").on("click", ".delete-item", function(event){
+		var name = $(this).attr("data-name");
+		shoppingCart.removeItemFromCartAll(name);
+		displayCart();
+});
+
+$("#show-cart").on("click", ".subtract-item", function(event){
+		var name = $(this).attr("data-name");
+		shoppingCart.removeItemFromCart(name);
+		displayCart();
+});
+
+$("#show-cart").on("click", ".plus-item", function(event){
+		var name = $(this).attr("data-name");
+		shoppingCart.addItemToCart(name, 0, 1);
+		displayCart();
+});
+
+$("#show-cart").on("change", ".item-count", function(event){
+		var name = $(this).attr("data-name");
+		var count = Number($(this).val());
+		shoppingCart.setCountForItem(name, count);
+		displayCart();
+});
+
+displayCart();
+
+$("#formSubmit").submit(function(){
+	if ($('.item-count').val() >= 1) {
+		return true;
+	}
+	else {
+		alert('Du skal vælge mindst en pakke')
+		return false;
+		}
+})
+</script>
+</form>
   </body>
 </html>
