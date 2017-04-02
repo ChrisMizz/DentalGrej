@@ -66,16 +66,16 @@ require_once 'connect_db.php';
 
 
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+$email = mysqli_real_escape_string($_POST['email']);
+$password = mysqli_real_escape_string($_POST['password']);
 
 
 
 $dbUserInfo = "SELECT Adgangskode FROM Bruger WHERE Email='$email' AND Adgangskode='$password'";
 
 
-$elev = mysqli_query($conn, $dbUserInfo);
-$rows = mysqli_num_rows($elev);
+$tjek = mysqli_query($conn, $dbUserInfo);
+$rows = mysqli_num_rows($tjek);
 
 if ($rows == 1) {
 

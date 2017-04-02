@@ -2,12 +2,12 @@
     session_start();
     require_once 'connect_db.php';
 
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $adress = $_POST["adress"];
-    $billing_postcode = $_POST["billing_postcode"];
-    $billing_city = $_POST["billing_city"];
+    $name = mysqli_real_escape_string($_POST["name"]);
+    $email = mysqli_real_escape_string($_POST["email"]);
+    $password = mysqli_real_escape_string($_POST["password"]);
+    $adress = mysqli_real_escape_string($_POST["adress"]);
+    $billing_postcode = mysqli_real_escape_string($_POST["billing_postcode"]);
+    $billing_city = mysqli_real_escape_string($_POST["billing_city"]);
    
     $sql = "INSERT INTO Bruger (`Navn`, `Email`, `Adgangskode`, `Adresse`, `Postnummer`, `By`)
     VALUES ('" . $name . "','" . $email . "','" . $password . "','" . $adress . "','" . $billing_postcode . "','" . $billing_city . "')";
