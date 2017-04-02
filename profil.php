@@ -5,7 +5,7 @@ if(isset($_SESSION["loggedIn"])) {
 }
 
 else {
-  header("location: index.html");
+  //header("location: index.html");
 }
 
 ?>
