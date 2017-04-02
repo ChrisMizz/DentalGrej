@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["magnus"])) {
+if(isset($_SESSION["loggedIn"])) {
   header("location: profil.php");
 }
 
@@ -61,7 +61,6 @@ if(isset($_SESSION["magnus"])) {
     </div>
     </div>
 <?php
-session_start();
 require_once 'connect_db.php';
 
 
