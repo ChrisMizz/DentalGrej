@@ -45,39 +45,42 @@
 		  <div id="Box-1" class="col s12 m3">
 		    <div class="icon-block">
 		      <img class="Pakke-image" src="TBaTP.png" alt="bikedark">
-					<h5 class="center">Basic pakken indholder:</h5>
+					<h5 class="center">Basic-pakken indholder:</h5>
 					<p><i class="material-icons">done</i>Tandbørste</p>
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">not_interested</i>Tandtråd</p>
 					<p><i class="material-icons">not_interested</i>Mundskyl</p>
-					<button class="btn add-to-cart" href="#" data-name="Basic" data-price="100.00">Basic (100.00 DKK)</button>
+					<button class="btn add-to-cart" href="#" data-name="Basic" data-price="50.00">Basic (50.00 DKK)</button>
+					<p class="grey-text" id="betalings-info">*Denne pakke bliver sendt hver anden måned!</p>
 		    </div>
 		  </div>
 		  <div id="Box-2" class="col s12 m3">
 		    <div class="icon-block">
 		      <img class="Pakke-image" src="TBaTP.png" alt="bikedark">
-					<h5 class="center">Standard pakken indholder:</h5>
+					<h5 class="center">Standard-pakken indholder:</h5>
 					<p><i class="material-icons">done</i>Tandbørste</p>
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">done</i>Tandtråd</p>
 					<p><i class="material-icons">not_interested</i>Mundskyl</p>
-					<button class="btn add-to-cart" href="#" data-name="Standard" data-price="150.00">Standard (150.00 DKK)</button>
+					<button class="btn add-to-cart" href="#" data-name="Standard" data-price="90.00">Standard (90.00 DKK)</button>
+					<p class="grey-text" id="betalings-info">*Denne pakke bliver sendt hver anden måned!</p>
 		    </div>
 		  </div>
 		  <div id="Box-3" class="col s12 m3">
 		    <div class="icon-block">
 		      <img class="Pakke-image" src="TBaTP.png" alt="bikedark">
-					<h5 class="center">Premium pakken indholder:</h5>
+					<h5 class="center">Premium-pakken indholder:</h5>
 					<p><i class="material-icons">done</i>Tandbørste</p>
 					<p><i class="material-icons">done</i>Tandpasta</p>
 					<p><i class="material-icons">done</i>Tandtråd</p>
 					<p><i class="material-icons">done</i>Mundskyl</p>
-					<button class="btn add-to-cart" href="#" data-name="Premium" data-price="300.00">Premium (300.00 DKK)</button>
+					<button class="btn add-to-cart" href="#" data-name="Premium" data-price="250.00">Premium (250.00 DKK)</button>
+					<p class="grey-text" id="betalings-info">*Denne pakke bliver sendt hver anden måned!</p>
 		    </div>
 		  </div>
 			<br>
 		</div>
-		<div class="container">
+		<div class="container" id="shopping-cart">
 			<ul type="Number" id="show-cart">
 					<li>???????</li>
 			</ul>
@@ -98,11 +101,6 @@ $(".add-to-cart").click(function(event){
 		displayCart();
 });
 
-$("#clear-cart").click(function(event){
-		shoppingCart.clearCart();
-		displayCart();
-});
-
 function displayCart() {
 		var cartArray = shoppingCart.listCart();
 		console.log(cartArray);
@@ -110,7 +108,7 @@ function displayCart() {
 			for (var i in cartArray) {
 				output += "<li>"
 					+cartArray[i].name
-					+" <input class='item-count' data-name='"
+					+" <input style='color:black;'disabled class='item-count'"
 					+cartArray[i].name
 					+"' value='"+cartArray[i].count+"' >"
 					+" <button class='subtract-item' data-name='"
@@ -187,7 +185,7 @@ $("#formSubmit").submit(function(){
   </div>
   <div class="footer-copyright">
     <div class="container">
-			<p>Eksamens projekt udført af Rasmus Gregersen og Christoffer Adrian Detlef 2017</p>
+			<p>Eksamens-projekt udført af Rasmus Gregersen og Christoffer Adrian Detlef 2017</p>
     </div>
   </div>
 </footer>

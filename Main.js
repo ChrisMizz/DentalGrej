@@ -1,5 +1,5 @@
 $(function() {
-  // Her har vi gjort så når man trykker på knappen "Om Os" så scroller den en der ned
+  // Her har vi gjort så når man trykker på knappen "Om Os" så scroller den der ned
   $('.btn').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -7,7 +7,7 @@ $(function() {
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top
-        }, 1400); // Her forhindre man farten at gå alt for hurtigt
+        }, 1400); // Her bestemmer man hastigheden for hvor hurtigt den scroller
         return false;
       }
     }
@@ -31,33 +31,25 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
-var shoppingCart = (function () {
-
-  /******************************************************** */
+  /* ******************************************************* */
   //Dette er hvor vi alle ens pakker bliver valgt, og hvor den gemmer dem
-    // Private methods and properties
+var shoppingCart = (function () {
     var cart = [];
-
     function Item(name, price, count) {
         this.name = name
         this.price = price
         this.count = count
     }
-
     function saveCart() {
         localStorage.setItem("shoppingCart", JSON.stringify(cart));
     }
-
     function loadCart() {
         cart = JSON.parse(localStorage.getItem("shoppingCart"));
         if (cart === null) {
             cart = []
         }
     }
-
     loadCart();
-
-
 
     // Public methods and properties
     var obj = {};
@@ -157,15 +149,3 @@ var shoppingCart = (function () {
     // ----------------------------
     return obj;
 })();
-
-/*$(function(){
-  $(".myForm").submit(function(e) {
-  e.preventDefault();
-  var url = $(this).find('input[value > 0]:').val();
-  if (url) {
-   var myWindow = window.open("registrer.php", "_self");
- }
- else {
- }
- });
-});*/
