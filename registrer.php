@@ -8,22 +8,7 @@
     $adress = $_POST["adress"];
     $billing_postcode = $_POST["billing_postcode"];
     $billing_city = $_POST["billing_city"];
-    
-   /*     SET $BrugerId = (
-            SELECT IdBruger
-            FROM Bruger
-            WHERE Email = $email);
-    */    //Kig på link fra magnus, skal nok laves på en anden måde end det der står ovenfor
-
-   $odre = "INSERT INTO Abonnementer (`Navn`, `Adresse`, `Postnummer`, `By`, `Bruger_idBruger`)
-    VALUES ('" . $name . "','" . $adress . "','" . $billing_postcode . "','" . $billing_city . "','" . $BrugerId . "')";
-
-    if (mysqli_query($conn, $sql)) {
-        //echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
-    } else {
-        echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
-    }
-
+   
     $sql = "INSERT INTO Bruger (`Navn`, `Email`, `Adgangskode`, `Adresse`, `Postnummer`, `By`)
     VALUES ('" . $name . "','" . $email . "','" . $password . "','" . $adress . "','" . $billing_postcode . "','" . $billing_city . "')";
     

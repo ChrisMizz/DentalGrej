@@ -84,7 +84,7 @@ if ($rows == 1) {
     exit;
 }else {
 
-echo "Lortet virker IKKE, møgluder";
+echo "Der opstod en fejl";
 
 }
 
