@@ -82,11 +82,6 @@ $(".add-to-cart").click(function(event){
 		displayCart();
 });
 
-$("#clear-cart").click(function(event){
-		shoppingCart.clearCart();
-		displayCart();
-});
-
 function displayCart() {
 		var cartArray = shoppingCart.listCart();
 		console.log(cartArray);
@@ -154,7 +149,7 @@ $("#formSubmit").submit(function(){
                 <label for='adress' >Adresse*:</label>
                 <input type='text' name='adress' id='adress' maxlength="50" required/>
                 <label for='postnummer' >Postnummer*:</label>
-                <input type='text' name='billing_postcode' id='billing_postcode' maxlength="4" required/>
+                <input type='Number' name='billing_postcode' id='billing_postcode' maxlength="4" required/>
                 <label for='By' >By*:</label>
                 <input type='text' name='billing_city' id='billing_city' maxlength="50" required/>
                 <input type='submit' name='Submit' value='Opret' class="btn" />

@@ -80,7 +80,7 @@
 		  </div>
 			<br>
 		</div>
-		<div class="container" id="indkøbskurv">
+		<div class="container" id="shopping-cart">
 			<ul type="Number" id="show-cart">
 					<li>???????</li>
 			</ul>
@@ -101,11 +101,6 @@ $(".add-to-cart").click(function(event){
 		displayCart();
 });
 
-$("#clear-cart").click(function(event){
-		shoppingCart.clearCart();
-		displayCart();
-});
-
 function displayCart() {
 		var cartArray = shoppingCart.listCart();
 		console.log(cartArray);
@@ -113,7 +108,7 @@ function displayCart() {
 			for (var i in cartArray) {
 				output += "<li>"
 					+cartArray[i].name
-					+" <input class='item-count' data-name='"
+					+" <input style='color:black;'disabled class='item-count'"
 					+cartArray[i].name
 					+"' value='"+cartArray[i].count+"' >"
 					+" <button class='subtract-item' data-name='"

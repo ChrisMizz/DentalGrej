@@ -1,4 +1,5 @@
 /* Alle Sider - START */
+
 html {
 	height: 100%;
 }
@@ -59,7 +60,9 @@ footer #links {
 }
 
 /* Alle Sider - SLUT */
+
 /* Index - Side - START */
+
 /* Index/Produkt - Basic - START */
 
 h1.header.center {
@@ -73,6 +76,7 @@ h5.header {
 }
 
 /* Index/Produkt - Basic - SLUT */
+
 /* Index - Nav - START */
 
 nav {
@@ -95,7 +99,9 @@ nav {
 }
 
 /* Index - Nav - SLUT */
+
 /*Index - Banner - START */
+
 #index-banner {
 	background-image: url(Dentist.JPG);
 	-webkit-background-size: cover;
@@ -140,7 +146,9 @@ nav {
   background-color: #2BACE0;
 }
 /*Index - Banner - SLUT */
+
 /* Index - Containers med tekst - START */
+
 #index-info {
 	background-color: white;
 	padding: 0px 140px;
@@ -150,7 +158,9 @@ nav {
 }
 
 /* Index - Containers kun med tekst - SLUT */
+
 /* Index - Containers med billede/tekst * START */
+
 #index-pic {
 	display: inline-block;
 	vertical-align: middle;
@@ -177,9 +187,13 @@ nav {
 	padding: 0%;
 }
 /* Index - Containers med billede/tekst - SLUT */
+
 /*Index - Side - SLUT */
+
 /*Produkt - Side - START */
+
 /*Produkt - nav - START */
+
 .Produkt-nav {
 	margin-bottom: 70px;
 }
@@ -239,13 +253,16 @@ nav {
 	margin: 0;
 }
 
-#indkøbskurv {
+#shopping-cart {
 	margin-left: 180px;
 }
 
 /*Produkt - Pakker - SLUT */
+
 /*Produkt - Side - SLUT */
+
 /*Registrer - Side - START */
+
 #register {
 	padding-top: 40px;
 	padding-bottom: 20px;
@@ -270,6 +287,13 @@ fieldset {
 	margin-top: 20px;
 }
 
+/* Dette fjerner pillene ved input til postnr. */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /*Registrer - Side - SLUT*/
 
 /*Login - Side - START*/
@@ -283,7 +307,11 @@ fieldset {
 	margin-bottom: 20px;
 }
 /*Login - Side - SLUT */
-/*Betaling - Side - START */
 
-/*Betaling - Side - SLUT */
-/* Betaling - Side - START */
+/*regHandler - Side - START */
+
+.input-field {
+	margin: 0;
+}
+
+/*regHandler - Side - SLUT */

@@ -26,11 +26,17 @@
         <div id="regTabel">
         <input type='hidden' name='submitted' id='submitted' value='1'/>
         <label for='cardnumber' >Kortnummer (16 cifre)*: </label>
+        <div class="input-field">
         <input type='text' name='cardnumber' id='cnumber' maxlength="16" disabled/>
+        <label for="cnumber">1231231231231230</label>
+        </div>
         <label for='udløbsdato' >Udløbsdato*:</label>
         <input type='month' name='udløbsdato' id='uddato' disabled/><br><br>
         <label for='sikkerhedskode' >Sikkerhedskode*:</label>
+        <div class="input-field">
         <input type='text' name='sikkerhedskode' id='skode' maxlength="3" disabled/>
+        <label for="cnumber">123</label>
+        </div>
         <input type='submit' name='Submit' value='Betal' class="btn" />
         </div>
         </fieldset>
