@@ -21,7 +21,8 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) { //Ved at ændre tallet, kan man bestemme hvornår (top knappen) skal komme frem
         document.getElementById("top-btn").style.display = "block";
-    } else {
+    } 
+    else {
         document.getElementById("top-btn").style.display = "none";
     }
 }
@@ -31,9 +32,7 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
- 
- 
-  /* ******************************************************* */
+  /* ***********************Start på shoppingCart*************************** */
   //Dette er hvor vi alle ens pakker bliver valgt, og hvor den gemmer dem
 var shoppingCart = (function () {
     var cart = [];
@@ -55,7 +54,7 @@ var shoppingCart = (function () {
 
     var obj = {};
 
-    obj.addItemToCart = function (name, price, count) {
+    obj.addItemToCart = function (name, price, count) { //Denne funktion bruges når man skal tilføje en pakke
         for (var i in cart) {
             if (cart[i].name === name) {
                 cart[i].count += count;
@@ -69,7 +68,7 @@ var shoppingCart = (function () {
         saveCart();
     };
 
-    obj.setCountForItem = function (name, count) {
+    obj.setCountForItem = function (name, count) { //Denne funktion bruges når man ændre på hvor mange pakker man har valgt
         for (var i in cart) {
             if (cart[i].name === name) {
                 cart[i].count = count;
@@ -136,3 +135,4 @@ var shoppingCart = (function () {
     };
     return obj;
 })();
+  /* ***********************Slutning på shoppingCart*************************** */
