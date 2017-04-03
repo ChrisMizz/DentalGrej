@@ -31,6 +31,8 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+ 
+ 
   /* ******************************************************* */
   //Dette er hvor vi alle ens pakker bliver valgt, og hvor den gemmer dem
 var shoppingCart = (function () {
