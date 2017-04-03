@@ -2,9 +2,12 @@
     session_start();
     require_once 'connect_db.php';
 
-/*     Skal sikre mod sql injection
-        Men det forhindre i at oprette bruger
-        Derfor er det blevet til en kommentar
+/*  
+    Skal sikre mod sql injection
+    Men af uvidste årsager forhindre det os i at oprette bruger
+    Derfor er det blevet til en kommentar
+    Dette problem skal selvfølgelig løses inden denne hjemmeside kan offentliggøres
+
     $name = mysqli_real_escape_string($_POST["name"]);
     $email = mysqli_real_escape_string($_POST["email"]);
     $password = mysqli_real_escape_string($_POST["password"]);
