@@ -127,7 +127,7 @@ nav {
 	background-color: #2BACE0;
 }
 
-#myBtn {
+#top-btn {
   display: none;
   position: fixed;
   bottom: 20px;
@@ -142,7 +142,7 @@ nav {
   border-radius: 10px;
 }
 
-#myBtn:hover {
+#top-btn:hover {
   background-color: #2BACE0;
 }
 /*Index - Banner - SLUT */

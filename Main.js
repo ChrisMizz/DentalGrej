@@ -5,7 +5,7 @@ $(function() {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
-        $('html,body').animate({
+        $('html,body').animate({ //Her fra kører den en animation ned til punktet og ikke bare hopper der ned
           scrollTop: target.offset().top
         }, 1400); // Her bestemmer man hastigheden for hvor hurtigt den scroller
         return false;
@@ -19,10 +19,10 @@ $(function() {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) { //Ved at ændre tallet, kan man bestemme hvornår (top knappen) skal komme frem
+        document.getElementById("top-btn").style.display = "block";
     } else {
-        document.getElementById("myBtn").style.display = "none";
+        document.getElementById("top-btn").style.display = "none";
     }
 }
 
@@ -36,22 +36,21 @@ function topFunction() {
 var shoppingCart = (function () {
     var cart = [];
     function Item(name, price, count) {
-        this.name = name
-        this.price = price
-        this.count = count
+        this.name = name //Dette er navnene på pakkerne
+        this.price = price //Dette er prisen fra pakkerne 
+        this.count = count //Her samlerer den prisen fra alle valgte pakker
     }
-    function saveCart() {
+    function saveCart() { //Denne funktion gemmer de valgte pakker i en localStorage
         localStorage.setItem("shoppingCart", JSON.stringify(cart));
     }
-    function loadCart() {
+    function loadCart() { //Denne funktion viser vej til hvor man kan hente localStorage fra
         cart = JSON.parse(localStorage.getItem("shoppingCart"));
         if (cart === null) {
             cart = []
         }
     }
-    loadCart();
+    loadCart(); //Her henter den de gemte data
 
-    // Public methods and properties
     var obj = {};
 
     obj.addItemToCart = function (name, price, count) {
@@ -62,8 +61,6 @@ var shoppingCart = (function () {
                 return;
             }
         }
-
-        console.log("addItemToCart:", name, price, count);
 
         var item = new Item(name, price, count);
         cart.push(item);
@@ -80,11 +77,11 @@ var shoppingCart = (function () {
         saveCart();
     };
 
-
-    obj.removeItemFromCart = function (name) { // Removes one item
+// Denne funktion gør så man kan fjerne en af sine pakker
+    obj.removeItemFromCart = function (name) { 
         for (var i in cart) {
-            if (cart[i].name === name) { // "3" === 3 false
-                cart[i].count--; // cart[i].count --
+            if (cart[i].name === name) { 
+                cart[i].count--; 
                 if (cart[i].count === 0) {
                     cart.splice(i, 1);
                 }
@@ -94,9 +91,9 @@ var shoppingCart = (function () {
         saveCart();
     };
 
-
-    obj.removeItemFromCartAll = function (name) { // removes all item name
-        for (var i in cart) {
+// Denne funktion gør så man kan helt slette de valgte pakker
+    obj.removeItemFromCartAll = function (name) { 
+        for (var i in cart) { 
             if (cart[i].name === name) {
                 cart.splice(i, 1);
                 break;
@@ -105,14 +102,7 @@ var shoppingCart = (function () {
         saveCart();
     };
 
-
-    obj.clearCart = function () {
-        cart = [];
-        saveCart();
-    }
-
-
-    obj.countCart = function () { // -> return total count
+    obj.countCart = function () { // Denne funktion tæller det antal valgte pakker
         var totalCount = 0;
         for (var i in cart) {
             totalCount += cart[i].count;
@@ -121,31 +111,26 @@ var shoppingCart = (function () {
         return totalCount;
     };
 
-    obj.totalCart = function () { // -> return total cost
+    obj.totalCart = function () { //Denne funktion finder den total pris på alle valgte pakker
         var totalCost = 0;
         for (var i in cart) {
-            totalCost += cart[i].price * cart[i].count;
+            totalCost += cart[i].price * cart[i].count; //Her finder den hvor mange pakker er der valgt * prisen fra hver pakke
         }
         return totalCost.toFixed(2);
     };
 
-    obj.listCart = function () { // -> array of Items
+    obj.listCart = function () { 
         var cartCopy = [];
-        console.log("Listing cart");
-        console.log(cart);
         for (var i in cart) {
-            console.log(i);
             var item = cart[i];
             var itemCopy = {};
             for (var p in item) {
                 itemCopy[p] = item[p];
             }
-            itemCopy.total = (item.price * item.count).toFixed(2);
+            itemCopy.total = (item.count).toFixed(2); //Dette gør så inputet viser det antal valgte pakker 
             cartCopy.push(itemCopy);
         }
         return cartCopy;
     };
-
-    // ----------------------------
     return obj;
 })();

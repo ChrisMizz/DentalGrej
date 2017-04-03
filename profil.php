@@ -51,7 +51,7 @@ else {
         </ul>
     </div>
   </nav>
-<button onclick="topFunction()" id="myBtn" title="Go to top">&#x21E7 Top</button>
+<button onclick="topFunction()" id="top-btn" title="Go to top">&#x21E7 Top</button>
 <form id="formSubmit" class="myForm" action="registrer.php">
     <div id="reg-box" class="container">
     <div id="index-info" class "container">
