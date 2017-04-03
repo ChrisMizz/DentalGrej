@@ -31,7 +31,7 @@
         <label for="cnumber">1231231231231230</label>
         </div>
         <label for='udløbsdato' >Udløbsdato*:</label>
-        <input type='month' name='udløbsdato' id='uddato' disabled/><br><br>
+        <input type='month' name='udløbsdato' id='uddato'/><br><br>
         <label for='sikkerhedskode' >Sikkerhedskode*:</label>
         <div class="input-field">
         <input type='text' name='sikkerhedskode' id='skode' maxlength="3" disabled/>

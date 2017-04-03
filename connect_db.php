@@ -9,4 +9,3 @@ if ($conn->connect_error) {
     //echo "Connented succesfully";
 }
 ?>
-

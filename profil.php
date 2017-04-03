@@ -1,12 +1,15 @@
 <?php
 session_start();
 
-//Tjekker om brugeren er logget ind
+//Tjekker om brugeren er logget ind, hvis de ikke er logget ind, så bliver de send til forsiden
 if(isset($_SESSION["loggedIn"])) {
   //echo "Det virker";
 }
 
 else {
+  //Vi havde problemer med at logge ind, derfor kunne vi kke sætte en session
+  //derfor er vi nød til at kommenterer nedenstående kode ud
+
   //header("location: index.html");
 }
 

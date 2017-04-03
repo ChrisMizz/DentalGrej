@@ -17,14 +17,16 @@
 */
     $name = $_POST["name"];
     $email = $_POST["email"];
-    $password = $_POST["password"];
+    $password = $_POST["password"];     //Mangler at kryptere adgangskoden
     $adress = $_POST["adress"];
     $billing_postcode = $_POST["billing_postcode"];
     $billing_city = $_POST["billing_city"];
    
+   //Indsætter informationer i databasen
     $sql = "INSERT INTO Bruger (`Navn`, `Email`, `Adgangskode`, `Adresse`, `Postnummer`, `By`)
     VALUES ('" . $name . "','" . $email . "','" . $password . "','" . $adress . "','" . $billing_postcode . "','" . $billing_city . "')";
     
+    //Tjekker om det lykkedes at indsætte data
     if (mysqli_query($conn, $sql)) {
         header('Location: regHandler.php');
         //echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
