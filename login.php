@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION["loggedIn"])) {
-  header("location: profil.php");
+  header("location: profil.php");   //Tjekker om bruger allerede er logget ind, hvis de er, så sendes de hen til profilsiden
 }
 
 ?>
@@ -63,27 +63,32 @@ if(isset($_SESSION["loggedIn"])) {
 <?php
 require_once 'connect_db.php';
 
-
-
+/*
+Her har vi samme problem som på registrer siden
 $email = mysqli_real_escape_string($_POST['email']);
 $password = mysqli_real_escape_string($_POST['password']);
+*/
+
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 
 
 $dbUserInfo = "SELECT Adgangskode FROM Bruger WHERE Email='$email' AND Adgangskode='$password'";
 
+//Tjekker at bruger input allerede eksistere i databsen
 
 $tjek = mysqli_query($conn, $dbUserInfo);
 $rows = mysqli_num_rows($tjek);
 
 if ($rows == 1) {
 
-    $_SESSION["loggedIn"] = $email; 
+    $_SESSION["loggedIn"] = $email; //Sætter session som "loggedin" hvis kode er rigtig
     header("Location: profil.php");
     exit;
 }else {
 
-echo "Der opstod en fejl";
+echo "Forkert email eller kode";
 
 }
 
