@@ -38,7 +38,7 @@ else {
       <img class="brand-logo center" src="Logo.png">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="login.php">Log ind</a></li>
+          <li><a href="logout.php">Log ud</a></li>
         </ul>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="Index.html">Startside</a></li>
@@ -47,7 +47,7 @@ else {
         <ul class="side-nav" id="mobile-demo">
           <li><a href="Index.html">Startside</a></li>
           <li><a href="Produkter.html">Produkter</a></li>
-          <li><a href="login.php">Log ind</a></li>
+          <li><a href="logout.php">Log ud</a></li>
         </ul>
     </div>
   </nav>
